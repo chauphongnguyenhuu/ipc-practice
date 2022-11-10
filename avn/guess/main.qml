@@ -94,10 +94,26 @@ Window {
         anchors {
             top: refresh.bottom
             horizontalCenter: parent.horizontalCenter
-            topMargin: 20
+            topMargin: 40
         }
         width: 400
         placeholderText: "Enter the name..."
         font.pixelSize: 24
+    }
+
+    EmployeeListView {
+        anchors {
+            top: search.bottom
+            bottom: parent.bottom
+            horizontalCenter: parent.horizontalCenter
+            topMargin: 20
+            bottomMargin: 20
+        }
+        width: 400
+        model: 25
+
+        onSelectedItemChanged: {
+            console.log("index( %1 ), id( %2 )".arg(index).arg(id))
+        }
     }
 }

@@ -5,5 +5,6 @@
         <file>../../res/check.png</file>
         <file>../../res/close.png</file>
         <file>../../res/paw.png</file>
+        <file>EmployeeListView.qml</file>
     </qresource>
 </RCC>
