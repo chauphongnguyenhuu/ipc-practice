@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 1.0
 
+import Lge.Avn 1.0
+
 Window {
     width: 480
     height: 920
@@ -11,6 +13,10 @@ Window {
     maximumHeight: height
     title: qsTr("Guess")
     visible: true
+
+    EmployeeListModel {
+        id: employeeListModel
+    }
 
     Text {
         id: name
@@ -110,7 +116,7 @@ Window {
             bottomMargin: 20
         }
         width: 400
-        model: 25
+        model: employeeListModel
 
         onSelectedItemChanged: {
             console.log("index( %1 ), id( %2 )".arg(index).arg(id))

@@ -64,7 +64,7 @@ Item {
                     leftMargin: 20
                 }
                 width: parent.width * 2 / 3
-                text: "Name"
+                text: model.name
                 font.pixelSize: 20
                 horizontalAlignment: Text.AlignLeft
             }
@@ -76,7 +76,7 @@ Item {
                     rightMargin: 20
                 }
                 width: parent.width / 3
-                text: "0.0"
+                text: model.average.toFixed(1)
                 font.pixelSize: 20
                 horizontalAlignment: Text.AlignRight
             }

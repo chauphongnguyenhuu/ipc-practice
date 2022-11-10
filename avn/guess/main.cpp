@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include "employeelistmodel.h"
+
 #define PACKAGE_URI "Lge.Avn"
 #define MAJOR_VERSION 1
 #define MINOR_VERSION 0
@@ -10,6 +12,9 @@ int main(int argc, char *argv[])
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
+
+    qmlRegisterType<EmployeeListModel>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "EmployeeListModel");
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
