@@ -2,9 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Skill.qml</file>
-        <file>../../res/check.png</file>
-        <file>../../res/close.png</file>
-        <file>../../res/paw.png</file>
         <file>EmployeeListView.qml</file>
+        <file>check.png</file>
+        <file>close.png</file>
+        <file>paw.png</file>
     </qresource>
 </RCC>

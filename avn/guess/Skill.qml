@@ -5,7 +5,7 @@ Item {
 
     property alias skillName: name.text
     property alias skillPoint: point.text
-    property bool pass: false
+    property bool pass: true
 
     implicitWidth: icon.width + point.width + status.width
     implicitHeight: 50
@@ -18,7 +18,7 @@ Item {
         }
         width: 32
         height: 32
-        source: "qrc:/../../res/paw.png"
+        source: "qrc:/paw.png"
     }
 
     Text {
@@ -54,7 +54,6 @@ Item {
         }
         width: 32
         height: 32
-        // source: pass ? "qrc:/../../res/check.png" : "qrc:/../../res/close.png"
-        source: "qrc:/../../res/check.png"
+        source: pass ? "qrc:/check.png" : "qrc:/close.png"
     }
 }
