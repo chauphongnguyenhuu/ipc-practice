@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Skill.qml</file>
+        <file>../../res/check.png</file>
+        <file>../../res/close.png</file>
+        <file>../../res/paw.png</file>
     </qresource>
 </RCC>

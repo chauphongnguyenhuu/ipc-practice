@@ -1,6 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#define PACKAGE_URI "Lge.Avn"
+#define MAJOR_VERSION 1
+#define MINOR_VERSION 0
 
 int main(int argc, char *argv[])
 {
