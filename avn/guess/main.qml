@@ -88,4 +88,16 @@ Window {
             elide: Text.ElideRight
         }
     }
+
+    TextField {
+        id: search
+        anchors {
+            top: refresh.bottom
+            horizontalCenter: parent.horizontalCenter
+            topMargin: 20
+        }
+        width: 400
+        placeholderText: "Enter the name..."
+        font.pixelSize: 24
+    }
 }
