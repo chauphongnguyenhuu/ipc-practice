@@ -91,11 +91,12 @@ Item {
             }
         }
         highlight: Rectangle {
-            y: listView.currentItem.y
+            y: listView.currentItem ? listView.currentItem.y : 0
             width: listView.width
             height: 40
             color: "lightblue"
             radius: 5
+            visible: !!listView.currentItem
         }
         highlightFollowsCurrentItem: false
         populate: Transition {

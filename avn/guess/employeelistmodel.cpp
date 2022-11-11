@@ -13,6 +13,17 @@ EmployeeListModel::EmployeeListModel(QObject* parent/* = nullptr*/)
     }
 }
 
+void EmployeeListModel::populate(const QList<Entry>& entries)
+{
+    beginResetModel();
+    m_entries.clear();
+
+    for (auto it = entries.cbegin(), end = entries.cend(); it != end; ++it)
+        m_entries.append(*it);
+
+    endResetModel();
+}
+
 int EmployeeListModel::rowCount(const QModelIndex&/* parent = QModelIndex()*/) const
 {
     return m_entries.count();

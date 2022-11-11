@@ -97,6 +97,11 @@ Window {
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
         }
+
+        onClicked: {
+            console.log("[main.qml][refresh] `onClicked()`")
+            employeeController.refresh(employeeListModel)
+        }
     }
 
     TextField {
