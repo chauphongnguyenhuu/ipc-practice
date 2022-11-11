@@ -6,10 +6,12 @@ QML_IMPORT_PATH =
 QML_DESIGNER_IMPORT_PATH =
 
 SOURCES += \
+        employeecontroller.cpp \
         employeelistmodel.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
 
 HEADERS += \
+    employeecontroller.h \
     employeelistmodel.h

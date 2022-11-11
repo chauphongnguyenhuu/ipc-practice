@@ -27,7 +27,7 @@ Item {
             left: icon.right
             right: point.left
             verticalCenter: root.verticalCenter
-            leftMargin: 5
+            leftMargin: 10
             rightMargin: 5
         }
         elide: Text.ElideRight

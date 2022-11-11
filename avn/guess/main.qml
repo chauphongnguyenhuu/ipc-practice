@@ -18,6 +18,10 @@ Window {
         id: employeeListModel
     }
 
+    EmployeeController {
+        id: employeeController
+    }
+
     Text {
         id: name
         anchors {
@@ -108,6 +112,7 @@ Window {
     }
 
     EmployeeListView {
+        id: employeeListView
         anchors {
             top: search.bottom
             bottom: parent.bottom
@@ -119,7 +124,8 @@ Window {
         model: employeeListModel
 
         onSelectedItemChanged: {
-            console.log("index( %1 ), id( %2 )".arg(index).arg(id))
+            console.log("[main.qml][employeeListView] `onSelectedItemChanged()` - index( %1 ), id( %2 )"
+                        .arg(index).arg(id))
         }
     }
 }

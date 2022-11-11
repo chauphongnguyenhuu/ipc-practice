@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 
 #include "employeelistmodel.h"
+#include "employeecontroller.h"
 
 #define PACKAGE_URI "Lge.Avn"
 #define MAJOR_VERSION 1
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
 #endif
 
     qmlRegisterType<EmployeeListModel>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "EmployeeListModel");
+    qmlRegisterType<EmployeeController>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "EmployeeController");
 
     QGuiApplication app(argc, argv);
 
