@@ -96,6 +96,13 @@ Window {
         width: 200
         height: 40
 
+        onClicked: {
+            console.log("[main.qml][refresh] `onClicked()`")
+
+            search.text = ""
+            employeeController.refresh(employeeListModel)
+        }
+
         Text {
             anchors.fill: parent
             text: "Refresh"
@@ -103,13 +110,6 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
-        }
-
-        onClicked: {
-            console.log("[main.qml][refresh] `onClicked()`")
-
-            search.text = ""
-            employeeController.refresh(employeeListModel)
         }
     }
 
