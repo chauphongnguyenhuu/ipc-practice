@@ -22,6 +22,13 @@ Window {
         id: employeeController
     }
 
+    SortFilterProxyModel {
+        id: employeeSearchingModel
+        sourceModel: employeeListModel
+        filterCaseSensitivity: Qt.CaseInsensitive
+        filterRole: EmployeeListModel.NameRole
+    }
+
     Text {
         id: name
         anchors {
@@ -100,6 +107,8 @@ Window {
 
         onClicked: {
             console.log("[main.qml][refresh] `onClicked()`")
+
+            search.text = ""
             employeeController.refresh(employeeListModel)
         }
     }
@@ -114,6 +123,10 @@ Window {
         width: 400
         placeholderText: "Enter the name..."
         font.pixelSize: 24
+
+        onTextChanged: {
+            employeeSearchingModel.setFilterFixedString(text)
+        }
     }
 
     EmployeeListView {
@@ -126,7 +139,7 @@ Window {
             bottomMargin: 20
         }
         width: 400
-        model: employeeListModel
+        model: employeeSearchingModel
 
         onSelectedItemChanged: {
             console.log("[main.qml][employeeListView] `onSelectedItemChanged()` - index( %1 ), id( %2 )"

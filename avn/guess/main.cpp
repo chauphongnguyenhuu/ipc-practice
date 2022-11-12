@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QSortFilterProxyModel>
 
 #include "employeelistmodel.h"
 #include "employeecontroller.h"
@@ -16,6 +17,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<EmployeeListModel>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "EmployeeListModel");
     qmlRegisterType<EmployeeController>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "EmployeeController");
+    qmlRegisterType<QSortFilterProxyModel>(PACKAGE_URI, MAJOR_VERSION, MINOR_VERSION, "SortFilterProxyModel");
 
     QGuiApplication app(argc, argv);
 

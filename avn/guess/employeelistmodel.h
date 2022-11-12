@@ -22,6 +22,7 @@ public:
         AverageRole,
         NameRole
     };
+    Q_ENUM(Role)
 
 public:
     explicit EmployeeListModel(QObject* parent = nullptr);
