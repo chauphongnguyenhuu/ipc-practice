@@ -101,6 +101,7 @@ Window {
 
             search.text = ""
             employeeController.refresh(employeeListModel)
+            employeeListView.currentIndex = 0
         }
 
         Text {

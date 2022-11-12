@@ -4,6 +4,7 @@ Item {
     id: root
 
     property alias model: listView.model
+    property alias currentIndex: listView.currentIndex
 
     signal selectedItemChanged(int index, int id)
 
