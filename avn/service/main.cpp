@@ -1,9 +1,9 @@
 #include <iostream>
 
-using namespace std;
+#include <core/data.h>
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    std::cout << "Hello World!" << sizeof(core::Employee) << std::endl;
     return 0;
 }
