@@ -8,11 +8,11 @@ INCLUDEPATH += ../core/include
 LIBS += -L../core -lcore
 
 SOURCES += \
-        fileutils.cpp \
+        localstorage.cpp \
         main.cpp
 
 RESOURCES +=
 
 HEADERS += \
     defines.h \
-    fileutils.h
+    localstorage.h
