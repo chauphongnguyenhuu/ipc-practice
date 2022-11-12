@@ -8,7 +8,11 @@ INCLUDEPATH += ../core/include
 LIBS += -L../core -lcore
 
 SOURCES += \
+        fileutils.cpp \
         main.cpp
 
-RESOURCES += \
-    res.qrc
+RESOURCES +=
+
+HEADERS += \
+    defines.h \
+    fileutils.h
