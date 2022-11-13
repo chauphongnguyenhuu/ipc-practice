@@ -9,10 +9,12 @@ LIBS += -L../core -lcore
 
 SOURCES += \
         localstorage.cpp \
-        main.cpp
+        main.cpp \
+        sharedstorage.cpp
 
 RESOURCES +=
 
 HEADERS += \
     defines.h \
-    localstorage.h
+    localstorage.h \
+    sharedstorage.h

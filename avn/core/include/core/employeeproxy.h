@@ -17,7 +17,7 @@ namespace core {
         void requestRefreshData();
 
         EmployeeProxy(const EmployeeProxy&) = delete;
-        void operator=(const EmployeeProxy&) = delete;
+        EmployeeProxy& operator=(const EmployeeProxy&) = delete;
 
     private:
         mqd_t m_qd{ -1 };

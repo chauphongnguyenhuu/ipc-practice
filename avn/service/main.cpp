@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <fcntl.h>
 #include <mqueue.h>
 #include <sys/stat.h>
@@ -9,6 +10,7 @@
 
 #include "defines.h"
 #include "localstorage.h"
+#include "sharedstorage.h"
 
 void onHandleMessage(const core::MsgBuf& msg);
 
@@ -46,8 +48,27 @@ void onHandleMessage(const core::MsgBuf& msg)
     {
         case core::MsgType::k_msgTypeRefreshData:
         {
-            std::vector<core::Employee> data = loadData(DATA_FILE_PATH);
-            printf("[main.cpp] `onHandleMessage()` - number of employee is loaded: %ld\n", data.size());
+            std::vector<core::Employee> employees = loadData(DATA_FILE_PATH);
+            printf("[main.cpp] `onHandleMessage()` - number of employee is loaded: %ld\n", employees.size());
+
+            core::SharedBuf* buffer = new core::SharedBuf;
+            buffer->count = employees.size();
+            for (int i = 0; i < buffer->count; ++i)
+            {
+                core::SharedBuf::Entry& entry = buffer->entries[i];
+                const core::Employee& e = employees[i];
+                entry.id = e.id;
+                entry.average = (e.assembly + e.cpp + e.js + e.qml + e.opengl) / 5.0f;
+                strncpy(entry.name, e.name, CORE_MAX_NAME_LENGTH);
+            }
+            SharedStorage& sharedStorage = SharedStorage::getInstance();
+            sharedStorage.shareData(*buffer);
+            delete buffer;
+
+            printf("shared ok\n");
+
+            // @TODO: notify shared data is updated
+
             break;
         }
         default:
