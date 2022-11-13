@@ -42,8 +42,6 @@ namespace core {
         MsgBuf msg = { .type = MsgType::k_msgTypeRefreshData, .msg = {} };
         int success = mq_send(m_qd, (char*)&msg, sizeof(MsgBuf), k_prio);
         PASSERT_ERRNO(success != -1 && "`requestRefreshData()`");
-        printf("requestRefreshData ok\n");
-        fflush(stdout);
     }
 
 }

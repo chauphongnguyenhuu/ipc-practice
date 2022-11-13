@@ -5,9 +5,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+    basemqreceiver.cpp \
     employeeproxy.cpp
 
 HEADERS += \
+    include/core/basemqreceiver.h \
     include/core/data.h \
     include/core/defines.h \
     include/core/employeeproxy.h

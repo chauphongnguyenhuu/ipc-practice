@@ -10,6 +10,7 @@ LIBS += -L../core -lcore
 SOURCES += \
         localstorage.cpp \
         main.cpp \
+        mqreceiver.cpp \
         sharedstorage.cpp
 
 RESOURCES +=
@@ -17,4 +18,5 @@ RESOURCES +=
 HEADERS += \
     defines.h \
     localstorage.h \
+    mqreceiver.h \
     sharedstorage.h
