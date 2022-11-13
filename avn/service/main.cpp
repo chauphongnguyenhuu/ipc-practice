@@ -7,6 +7,9 @@
 #include <core/defines.h>
 #include <core/data.h>
 
+#include "defines.h"
+#include "localstorage.h"
+
 void onHandleMessage(const core::MsgBuf& msg);
 
 int main()
@@ -37,12 +40,20 @@ int main()
 
 void onHandleMessage(const core::MsgBuf& msg)
 {
+    printf("[main.cpp] `onHandleMessage()` - type( %d )\n", msg.type);
+
     switch (msg.type)
     {
-    case core::MsgType::k_msgTypeRefreshData:
-        printf("refresh data pls\n");
-        break;
-    default:
-        break;
+        case core::MsgType::k_msgTypeRefreshData:
+        {
+            std::vector<core::Employee> data = loadData(DATA_FILE_PATH);
+            printf("[main.cpp] `onHandleMessage()` - number of employee is loaded: %ld\n", data.size());
+            break;
+        }
+        default:
+        {
+            fprintf(stderr, "[main.cpp] `onHandleMessage()` - type( %d ) is invalid\n", msg.type);
+            break;
+        }
     }
 }

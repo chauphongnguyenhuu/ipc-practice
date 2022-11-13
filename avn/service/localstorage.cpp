@@ -7,6 +7,8 @@
 
 std::vector<core::Employee> loadData(const char* filePath)
 {
+    printf("[localstorage.cpp] `loadData()` - filePath( %s )\n", filePath);
+
     std::vector<core::Employee> employees;
 
     FILE* fp = fopen(filePath, "r");
