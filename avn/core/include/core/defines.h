@@ -13,16 +13,16 @@
 
 #define CORE_MAX_ENTRIES 		25
 
-#define CORE_SHARED_MEMORY_PATH "/shm_avn"
-#define CORE_SHARED_MEMORY_PERMS ((int)(0666))
-#define CORE_SHARED_MEMORY_SIZE 1024
+#define CORE_SHARED_MEMORY_PATH 	"/shm_avn"
+#define CORE_SHARED_MEMORY_PERMS 	((int)(0666))
+#define CORE_SHARED_MEMORY_SIZE 	1024
 
-#define PASSERT_ERRNO(EXP) 			\
-    do 								\
-    { 								\
-        if (!(EXP)) 				\
-        { 							\
-            perror(#EXP); 			\
-            exit(EXIT_FAILURE); 	\
-        } 							\
+#define PASSERT_ERRNO(EXP) 					\
+    do 										\
+    { 										\
+        if (!(EXP)) 						\
+        { 									\
+            perror(#EXP); 					\
+            exit(EXIT_FAILURE); 			\
+        } 									\
     } while(0)

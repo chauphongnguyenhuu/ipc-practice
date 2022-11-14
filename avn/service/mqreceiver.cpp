@@ -39,7 +39,7 @@ void MqReceiver::onHandleMessage(const core::MsgBuf& buf)
             sharedStorage.shareData(*buffer);
             delete buffer;
 
-            // @TODO: notify shared data is updated
+            // @TODO: notify shared data is update to date
 
             break;
         }
