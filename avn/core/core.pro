@@ -6,10 +6,12 @@ CONFIG -= qt
 
 SOURCES += \
     basemqreceiver.cpp \
+    baseproxy.cpp \
     employeeproxy.cpp
 
 HEADERS += \
     include/core/basemqreceiver.h \
+    include/core/baseproxy.h \
     include/core/data.h \
     include/core/defines.h \
     include/core/employeeproxy.h

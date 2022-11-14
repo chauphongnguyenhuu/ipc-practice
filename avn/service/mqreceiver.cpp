@@ -4,6 +4,7 @@
 #include <vector>
 #include <core/defines.h>
 #include <core/data.h>
+#include <core/baseproxy.h>
 
 #include "defines.h"
 #include "localstorage.h"
@@ -11,6 +12,7 @@
 
 MqReceiver::MqReceiver()
     : core::BaseMqReceiver(CORE_MQ_PATH_SERVICE)
+    , m_deploy(new core::BaseProxy(CORE_MQ_PATH_GUESS))
 {
 }
 
@@ -39,7 +41,8 @@ void MqReceiver::onHandleMessage(const core::MsgBuf& buf)
             sharedStorage.shareData(*buffer);
             delete buffer;
 
-            // @TODO: notify shared data is update to date
+            core::MsgBuf response = { .type = core::k_msgTypeSharedDataIsUpToDate, .msg = {} };
+            m_deploy->send(response);
 
             break;
         }

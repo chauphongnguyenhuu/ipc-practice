@@ -17,7 +17,8 @@ namespace core {
 
     enum MsgType
     {
-        k_msgTypeRefreshData = 10
+        k_msgTypeRefreshData,
+        k_msgTypeSharedDataIsUpToDate
     };
 
     struct MsgBuf

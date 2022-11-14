@@ -6,6 +6,7 @@
 #define CORE_MAX_NAME_LENGTH 	32
 
 #define CORE_MQ_PATH_SERVICE 	"/mq_service"
+#define CORE_MQ_PATH_GUESS 		"/mq_guess"
 
 #define CORE_MQ_PERMS 			((int)(0666))
 #define CORE_MQ_MAX_MSG 		10
